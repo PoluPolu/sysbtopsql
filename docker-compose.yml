@@ -1,0 +1,13 @@
+services:
+  db:
+    image: postgres
+    container_name: psqldb
+    volumes:
+      - /data/psqldata:/var/lib/postgresql/data
+    ports:
+      - 5433:5432
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    network_mode: bridge
